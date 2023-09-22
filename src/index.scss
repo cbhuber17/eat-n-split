@@ -26,10 +26,18 @@ body {
 }
 
 .app {
-  min-height: 66vh;
   display: grid;
-  grid-template-columns: 34rem 44rem;
-  column-gap: 4rem;
+  @media (min-width: 850px) {
+    min-height: 66vh;
+    grid-template-columns: 34rem 44rem;
+    column-gap: 4rem;
+  }
+  @media (max-width: 850px) {
+    min-height: 80vh;
+    grid-template-rows: 34rem 44rem;
+    row-gap: 4rem;
+  }
+
   align-items: start;
 }
 
@@ -49,6 +57,10 @@ body {
 }
 
 .sidebar {
+  background-color: #cdcdcd;
+  border-radius: 7px;
+  padding: 1rem;
+
   ul {
     list-style: none;
     display: flex;
@@ -114,6 +126,8 @@ form {
   display: grid;
   align-items: center;
   gap: 1.2rem;
+  padding: 1rem;
+  margin: 1rem;
 
   background-color: var(--color-lightest);
   border-radius: 7px;
@@ -145,12 +159,7 @@ form {
 
 label {
   font-weight: 500;
-
-  &::first-letter {
-    display: inline-block;
-    margin-right: 4px;
-    font-size: 1.8rem;
-  }
+  padding: 1rem;
 }
 
 input,
